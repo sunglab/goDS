@@ -1,4 +1,4 @@
-package queue
+package main
 
 type queue struct {
 	f, b, len int
@@ -73,6 +73,6 @@ func (_q queue) Size() int {
 	return _q.len
 }
 
-func (_q *queue) Get() *queue {
-	return &_q.q
+func (_q *queue) Get() []interface{} {
+	return _q.q[_q.f:_q.b]
 }
