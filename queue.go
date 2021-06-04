@@ -1,4 +1,4 @@
-package main
+package queue
 
 type queue struct {
 	f, b, len int
