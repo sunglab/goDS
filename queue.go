@@ -72,3 +72,7 @@ func (_q queue) Back() (ret interface{}) {
 func (_q queue) Size() int {
 	return _q.len
 }
+
+func (_q *queue) Get() *queue {
+	return &_q.q
+}
