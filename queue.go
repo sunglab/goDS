@@ -15,7 +15,7 @@ func (_q *queue) newQueue(i int) *queue {
 	return _q
 }
 
-func (_q *queue) push(i interface{}) {
+func (_q *queue) Push(i interface{}) {
 	if _q.q == nil {
 		_q.q = make([]interface{}, 1)
 	}
@@ -36,7 +36,7 @@ func (_q *queue) push(i interface{}) {
 	_q.b++
 }
 
-func (_q *queue) pop() (ret interface{}) {
+func (_q *queue) Pop() (ret interface{}) {
 	if _q.empty() {
 		panic("queue is empty")
 	}
@@ -59,12 +59,16 @@ func (_q *queue) full() bool {
 	return _q.b == len(_q.q)
 }
 
-func (_q queue) front() (ret interface{}) {
+func (_q queue) Front() (ret interface{}) {
 	ret = _q.q[_q.f]
 	return
 }
 
-func (_q queue) back() (ret interface{}) {
+func (_q queue) Back() (ret interface{}) {
 	ret = _q.q[_q.b]
 	return
+}
+
+func (_q queue) Size() int {
+	return _q.len
 }
